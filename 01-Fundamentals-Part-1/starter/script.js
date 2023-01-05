@@ -25,15 +25,29 @@
 
 
 //This is for the assignment 01 Lecture : values and variables
-let myCountry = 'India';
-let myContinent = "Asia";
-let countryPopulation = '132crore';
-console.log('The country in which I live in is ' + myCountry);
-console.log('The country in which I live is in ' + myContinent + ' continent');
-console.log('The population of the country is ' + countryPopulation);
-let javaScriptIsFun = true;
-console.log(javaScriptIsFun);
-console.log(typeof true);
-console.log(typeof javaScriptIsFun);
-console.log(typeof 23);
-console.log(typeof 'Pritam');
+// let myCountry = 'India';
+// let myContinent = "Asia";
+// let countryPopulation = '132crore';
+// console.log('The country in which I live in is ' + myCountry);
+// console.log('The country in which I live is in ' + myContinent + ' continent');
+// console.log('The population of the country is ' + countryPopulation);
+// let javaScriptIsFun = true;
+// console.log(javaScriptIsFun);
+// console.log(typeof true);
+// console.log(typeof javaScriptIsFun);
+// console.log(typeof 23);
+// console.log(typeof 'Pritam');
+
+
+// *****  lecture 3 : let, const and var   ******
+// let age = 30;
+// age = 32;
+
+// const birthYear = 1991;
+// birthYear = 1994;
+// const job;
+// var job = 'programmer';
+// job = 'teacher';
+
+// lastName = "chauhan";
+// console.log(lastName);
