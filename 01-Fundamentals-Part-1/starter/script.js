@@ -51,3 +51,35 @@
 
 // lastName = "chauhan";
 // console.log(lastName);
+
+
+// ---------------------------------------------------------------------
+
+// ******* Lecture 4 : Basic Operators ********
+
+// ---------------------------------------------------------------------
+//  **Arithmetic operators**
+const now =2037;
+const agePritam = now - 1995;
+const ageSarah = now  - 2018;
+console.log(agePritam,ageSarah);
+console.log(agePritam * 2, ageSarah / 2, 2 ** 3);
+// 2 ** 3 means 2 to the power of 3 which equals to 2*2*2 
+const firstName = 'Pritam';
+const lastName = 'Chauhan';
+console.log(firstName + ' ' + lastName);
+
+//  **Assignment operator**
+let x = 10 + 5;
+x+=10; // means x = x + 10;
+x-=10; //means x = x - 10;
+x*=2; // means x = x * 2;
+x/=10; // means x = x / 10;
+console.log(x);
+
+//  **Comparison operator**
+console.log(agePritam>ageSarah);
+console.log(ageSarah>=18);
+
+const isFullAge = ageSarah>=18;
+console.log(now - 1995 > now - 2018);
