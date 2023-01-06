@@ -112,20 +112,47 @@
 
 // -----------------------------------------------------------
 
-const firstName = 'jonas';
-const job = 'teacher';
-const birthYear = 1991;
-const year = 2031;
-const jonas = "I'm " + firstName + ', a ' + (year - birthYear) + " year old " + job;
-console.log(jonas);
-console.log(`I'm ${firstName}, a ${year - birthYear} year old ${job}`);
+// const firstName = 'jonas';
+// const job = 'teacher';
+// const birthYear = 1991;
+// const year = 2031;
+// const jonas = "I'm " + firstName + ', a ' + (year - birthYear) + " year old " + job;
+// console.log(jonas);
+// console.log(`I'm ${firstName}, a ${year - birthYear} year old ${job}`);
 
-// To create multiple lines string.
-// Before ES6
-console.log("String with \n\
-multiple \n\
-lines");
-//After ES6 multiple lines with Template literals
-console.log(`String
-with multiple
-lines`);
+// // To create multiple lines string.
+// // Before ES6
+// console.log("String with \n\
+// multiple \n\
+// lines");
+// //After ES6 multiple lines with Template literals
+// console.log(`String
+// with multiple
+// lines`);
+
+// -----------------------------------------------------------
+
+// ********* Lecture 7: Taking Decisions: If/else statements ************
+
+// -----------------------------------------------------------
+
+// const age = 15;
+// const isOldEnough = age >=18;
+// if(isOldEnough){
+//     console.log('Sarah can start the driving licence')
+// }
+// else {
+//     const yearLeft = 18 - age;
+//     console.log(`Please apply after ${yearLeft} years. You are too young 😀`);
+// }
+
+// const birthYear = 2001;
+// let century;
+// if(birthYear<=2000){
+//     century = 20;
+//     console.log(`The person is born in ${century} century!`)
+// }
+// else{
+//     century = 21;
+//     console.log(`The perosn is born in ${century} century!`)
+// }
