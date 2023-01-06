@@ -2,10 +2,19 @@
 //***************** Coding Challenge 02 **********************
 //------------------------------------------------------------
 
-const markHeight = 1.69;
-const markWeight =  78;
-const johnHeight = 1.95;
-const johnWeight = 93;
+//********Data set 01***********
+//------------------------------
+// const markHeight = 1.69;
+// const markWeight =  78;
+// const johnHeight = 1.95;
+// const johnWeight = 93;
+
+//********Data set 02***********
+//------------------------------
+const markHeight = 1.88;
+const markWeight =  95;
+const johnHeight = 1.76;
+const johnWeight = 85; 
 console.log("The height and weight of Mark are respectively", markHeight,markWeight);
 console.log("The height and weight of john are respectively", johnHeight,johnWeight);
 const markBMI = markWeight/(markHeight*markHeight);
