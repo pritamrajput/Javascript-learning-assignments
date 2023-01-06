@@ -104,3 +104,28 @@
 
 // const averageAge = (agePritam + ageSarah) / 2;
 // console.log(averageAge);
+
+
+// -----------------------------------------------------------
+
+// ********* Lecture 6: Strings and Template literals ************
+
+// -----------------------------------------------------------
+
+const firstName = 'jonas';
+const job = 'teacher';
+const birthYear = 1991;
+const year = 2031;
+const jonas = "I'm " + firstName + ', a ' + (year - birthYear) + " year old " + job;
+console.log(jonas);
+console.log(`I'm ${firstName}, a ${year - birthYear} year old ${job}`);
+
+// To create multiple lines string.
+// Before ES6
+console.log("String with \n\
+multiple \n\
+lines");
+//After ES6 multiple lines with Template literals
+console.log(`String
+with multiple
+lines`);
