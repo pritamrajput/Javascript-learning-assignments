@@ -36,3 +36,6 @@ else{
     console.log("John's BMI is higher than Mark's");
     console.log(`John's BMI (${johnBMI}) is higher than Marks's BMI (${markBMI})`)
 }
+
+console.log("I am " - 23 - "years old");
+console.log('23'%'3');

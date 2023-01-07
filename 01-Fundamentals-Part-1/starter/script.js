@@ -156,3 +156,30 @@
 //     century = 21;
 //     console.log(`The perosn is born in ${century} century!`)
 // }
+
+
+// -----------------------------------------------------------
+
+// ********* Lecture 8: Type conversion and coercion ************
+
+// -----------------------------------------------------------
+
+//Type conversion
+const inputYear = '1991';
+console.log(Number(inputYear),inputYear);
+console.log(inputYear + 18);
+console.log(Number(inputYear)+18);
+console.log(Number('Jonas'));
+console.log(typeof NaN);
+console.log(String(23)+19);
+
+// Type coercion
+console.log('I am ' + 23 + ' year old.');
+console.log('23' - 10 - '3');
+console.log('23'*'2');
+console.log('23'/'2');
+
+//Exercise
+let n = '1'+ 1;
+n = n - 1;
+console.log(n);
