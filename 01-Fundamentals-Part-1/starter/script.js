@@ -210,5 +210,40 @@ if(height){
     console.log("YO! Height is defined");
 }
 else{
-    console.log("Height is UNDEFINED")
+    console.log("Height is UNDEFINED");
 }
+
+
+// -----------------------------------------------------------
+
+// ********* Lecture 10 : Equality Operator ************
+
+// -----------------------------------------------------------
+
+const age = '18';
+if(age === 18){
+    console.log("Congrats! You are an adult(STRICT!)");
+}
+
+if(age==18) console.log("Congrates ! you are an adult(LOOSE)");
+
+const favorite = Number(prompt("What's your favorite number ?"));//prompt("What's your favorite number ?");
+console.log(favorite);
+console.log(typeof favorite);
+if(favorite === 23){
+    console.log("COOL! 23 is an amazing number");
+}
+else  if(favorite === 56){
+    console.log("COOL! 56 is also an amazing number");
+}
+else if(favorite === 12 ){
+    console.log("12 is also an amazing number");
+}
+else{
+    console.log("we didn't found any match of an amazing number");
+}
+
+if(favorite !== 23){
+    console.log("Why not 23 ?");
+}
+
