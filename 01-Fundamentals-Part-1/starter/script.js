@@ -191,27 +191,27 @@ console.log(n);
 
 // -----------------------------------------------------------
 
-console.log(Boolean(0));
-console.log(Boolean(''));
-console.log(Boolean('Jonas'));
-console.log(Boolean(undefined));
-console.log(Boolean({}));
+// console.log(Boolean(0));
+// console.log(Boolean(''));
+// console.log(Boolean('Jonas'));
+// console.log(Boolean(undefined));
+// console.log(Boolean({}));
 
-const money = 0;
-if(money){
-    console.log("Don't spend it all");
-}
-else{
-    console.log("You should get a job");
-}
+// const money = 0;
+// if(money){
+//     console.log("Don't spend it all");
+// }
+// else{
+//     console.log("You should get a job");
+// }
 
-let height;
-if(height){
-    console.log("YO! Height is defined");
-}
-else{
-    console.log("Height is UNDEFINED");
-}
+// let height;
+// if(height){
+//     console.log("YO! Height is defined");
+// }
+// else{
+//     console.log("Height is UNDEFINED");
+// }
 
 
 // -----------------------------------------------------------
@@ -220,30 +220,59 @@ else{
 
 // -----------------------------------------------------------
 
-const age = '18';
-if(age === 18){
-    console.log("Congrats! You are an adult(STRICT!)");
-}
+// const age = '18';
+// if(age === 18){
+//     console.log("Congrats! You are an adult(STRICT!)");
+// }
 
-if(age==18) console.log("Congrates ! you are an adult(LOOSE)");
+// if(age==18) console.log("Congrates ! you are an adult(LOOSE)");
 
-const favorite = Number(prompt("What's your favorite number ?"));//prompt("What's your favorite number ?");
-console.log(favorite);
-console.log(typeof favorite);
-if(favorite === 23){
-    console.log("COOL! 23 is an amazing number");
-}
-else  if(favorite === 56){
-    console.log("COOL! 56 is also an amazing number");
-}
-else if(favorite === 12 ){
-    console.log("12 is also an amazing number");
+// const favorite = Number(prompt("What's your favorite number ?"));//prompt("What's your favorite number ?");
+// console.log(favorite);
+// console.log(typeof favorite);
+// if(favorite === 23){
+//     console.log("COOL! 23 is an amazing number");
+// }
+// else  if(favorite === 56){
+//     console.log("COOL! 56 is also an amazing number");
+// }
+// else if(favorite === 12 ){
+//     console.log("12 is also an amazing number");
+// }
+// else{
+//     console.log("we didn't found any match of an amazing number");
+// }
+
+// if(favorite !== 23){
+//     console.log("Why not 23 ?");
+// }
+
+
+// -----------------------------------------------------------
+
+// ********* Lecture 11&12 : Logical Operators ************
+
+// -----------------------------------------------------------
+
+const hasDrivingLicense = true;
+const hasGoodVision = true;
+
+console.log(hasDrivingLicense && hasGoodVision);
+console.log(hasDrivingLicense || hasGoodVision);
+console.log(!hasDrivingLicense);
+
+if (hasDrivingLicense && hasGoodVision){
+    console.log("Sarah is able to DRIVE!")
 }
 else{
-    console.log("we didn't found any match of an amazing number");
+    console.log("Someone else should drive....");
 }
 
-if(favorite !== 23){
-    console.log("Why not 23 ?");
-}
+const isTired = false;
 
+if(hasDrivingLicense && hasGoodVision && !isTired){
+    console.log("Sarah can drive the car :) ");
+}
+else{
+    console.log("Someone else should drive 🙂");
+}
