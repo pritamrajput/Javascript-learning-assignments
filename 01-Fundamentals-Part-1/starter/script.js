@@ -254,25 +254,105 @@ console.log(n);
 
 // -----------------------------------------------------------
 
-const hasDrivingLicense = true;
-const hasGoodVision = true;
+// const hasDrivingLicense = true;
+// const hasGoodVision = true;
 
-console.log(hasDrivingLicense && hasGoodVision);
-console.log(hasDrivingLicense || hasGoodVision);
-console.log(!hasDrivingLicense);
+// console.log(hasDrivingLicense && hasGoodVision);
+// console.log(hasDrivingLicense || hasGoodVision);
+// console.log(!hasDrivingLicense);
 
-if (hasDrivingLicense && hasGoodVision){
-    console.log("Sarah is able to DRIVE!")
+// if (hasDrivingLicense && hasGoodVision){
+//     console.log("Sarah is able to DRIVE!")
+// }
+// else{
+//     console.log("Someone else should drive....");
+// }
+
+// const isTired = false;
+
+// if(hasDrivingLicense && hasGoodVision && !isTired){
+//     console.log("Sarah can drive the car :) ");
+// }
+// else{
+//     console.log("Someone else should drive 🙂");
+// }
+
+
+// -----------------------------------------------------------
+
+// ********* Lecture 13 : Switch Statements ************
+
+// -----------------------------------------------------------
+
+const day ='tuesday';
+
+switch(day){
+    case 'monday':  //day === monday;
+        console.log("Plan course Structure");
+        console.log("Go to coding meetup");
+        break;
+    case 'tuesday':
+        console.log("Prepare theory lessons");
+        break;
+    case 'wednesday':
+    case 'Thursday' :
+        console.log("Write code examples");
+        break;
+    case 'friday':
+        console.log("Record the videos");
+        break;
+    case 'saturday':
+    case 'sunday':
+        console.log("Enjoy the day😎....!!!!");
+        break;
+    default:
+        console.log("Please provide a valid input")
+}
+
+
+
+// -----------------------------------------------------------
+
+// ********* Lecture 14 : Statements and Expressions ************
+
+// -----------------------------------------------------------
+
+
+3 + 4;
+1991;
+true && false && !false
+
+if(23>19){
+    const str = '23 is bigger';
+}
+
+const me = 'jonas';
+console.log(`I'm ${2037 - 1991} years old ${me}`)   //Expression allowed in template literals
+
+// console.log(`I'm ${3027 - 1773} years old ${if(23>19){
+//     const str = '23 is bigger';
+// }}`)    // If-else is a statement which is not allowed in template literals
+
+
+// -----------------------------------------------------------
+
+// ********* Lecture 15 : Terniary Operator ************
+
+// -----------------------------------------------------------
+
+const age = 20;
+age>=18 ? console.log('I can drink wine 🚙'):console.log('I can drink water 👻')
+
+const drink = age>=18?'wine':'water';
+console.log(drink);
+
+let drink1;
+if (age>=18){
+drink1 = 'wine';
 }
 else{
-    console.log("Someone else should drive....");
+    drink1 = 'water';
 }
+console.log(drink1);
 
-const isTired = false;
-
-if(hasDrivingLicense && hasGoodVision && !isTired){
-    console.log("Sarah can drive the car :) ");
-}
-else{
-    console.log("Someone else should drive 🙂");
-}
+console.log(`I like to drink ${age>=18?'wine':'water'}`);
