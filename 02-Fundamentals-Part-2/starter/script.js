@@ -90,3 +90,25 @@ const untilYearsRetirement1 = (firstName, birthYeah) => {
 
 console.log(untilYearsRetirement1('jonas', 1998));
 console.log(untilYearsRetirement1('Rohan', 1995));
+
+
+// ----------------------------------------------------------------------
+
+// ********* Lecture 21 : Functions calling other functions ************
+
+// ----------------------------------------------------------------------
+
+function cutFruitPieces(fruit){
+    return fruit*4;
+}
+
+function fruitProcessor(apples, oranges){
+    const applePieces = cutFruitPieces(apples);
+    const orangePieces = cutFruitPieces(oranges);
+    console.log(apples, oranges);
+    const juice = `juice with ${applePieces} pieces of apples and ${orangePieces} pieces of oranges `;
+    return juice; 
+}
+
+console.log(fruitProcessor(2,3));
+
