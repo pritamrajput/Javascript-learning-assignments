@@ -112,3 +112,29 @@ function fruitProcessor(apples, oranges){
 
 console.log(fruitProcessor(2,3));
 
+// ----------------------------------------------------------------------
+
+// ********* Lecture 22 : Reviewing Function ************
+
+// ----------------------------------------------------------------------
+
+const calcAge4 = function(birthYeah){
+    return 2037 - birthYeah;
+}
+
+const yearsUntilRetirement = function(birthYeah,firstName){
+    const age = calcAge4(birthYeah);
+    const retireYearLeft = 65 - age;
+    if(retireYearLeft > 0){
+        console.log(`${firstName} retires in ${retireYearLeft} years`);
+        return retireYearLeft;
+    }
+    else{
+        console.log(`${firstName} has already retired 🚀`);
+        return -1;
+    }
+}
+
+console.log(yearsUntilRetirement(1991, 'jonas'));
+console.log(yearsUntilRetirement(1970, 'Mike'));
+
