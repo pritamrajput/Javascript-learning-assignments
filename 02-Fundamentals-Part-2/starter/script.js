@@ -180,3 +180,37 @@ const age_3 = calcAge5(yearsList[4]);
 const ages = [age_1, age_2, age_3];
 
 console.log(ages);
+
+
+// ----------------------------------------------------------------------
+
+// ********* Lecture 24 : Array methods ************
+
+// ----------------------------------------------------------------------
+const friends1 = ['Michael', 'john', 'Peter'];
+
+console.log(friends1);
+const newLength = friends1.push('jay');
+console.log(friends1);
+console.log(newLength);
+
+const newLenght1 = friends1.unshift('Pritam');
+console.log(friends1);
+console.log(newLenght1);
+
+const elemReturn = friends1.pop();
+console.log(friends1);
+console.log(elemReturn);
+
+const elemReturn1 = friends1.shift();
+console.log(friends1);
+console.log(elemReturn1);
+
+const posiElement = friends1.indexOf('Michael');
+const posiElement1 = friends1.indexOf('Bob');
+console.log(posiElement, posiElement1);
+
+friends1.push('23');
+console.log(friends1.includes('Michael'));
+console.log(friends1.includes('Pritam'));
+console.log(friends1.includes('23'));
