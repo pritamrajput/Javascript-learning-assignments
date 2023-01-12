@@ -214,3 +214,29 @@ friends1.push('23');
 console.log(friends1.includes('Michael'));
 console.log(friends1.includes('Pritam'));
 console.log(friends1.includes('23'));
+
+
+// ----------------------------------------------------------------------
+
+// ********* Lecture 25 : Introduction to Arrays ************
+
+// ----------------------------------------------------------------------
+
+// ARRAYS
+const jonasArray = [
+    'jonas',
+    'schmedtmann',
+    2037 - 1998 ,
+    'teacher',
+    ['Michael', 'Peter','Steven']
+];
+
+// OBJECTS
+
+const jonasOne = {
+ firstName: 'jonas',
+ lastName: 'schmedtman',
+ age: 2037 - 1998,
+ job: 'Teacher',
+ friends: ['Michael', 'Peter', 'Steven']
+};
