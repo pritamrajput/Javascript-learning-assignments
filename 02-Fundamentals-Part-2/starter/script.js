@@ -286,3 +286,53 @@ console.log(jonasOne1.firstName + " has " + jonasOne1.friends.length + " friends
 // we can also do this with template literals
 
 console.log(`${jonasOne1.firstName} has ${jonasOne1.friends.length} friends, and his best friend is ${jonasOne1.friends[0]}`);
+
+
+
+// ----------------------------------------------------------------------
+
+// ********* Lecture 27 : Objects methods ************
+
+// ----------------------------------------------------------------------
+
+const jonasOne2 = {
+    firstName: 'jonas',
+    lastName: 'schmedtmann',
+    birthYeah: 1991,
+    job: 'Teacher',
+    friends: ['Michael', 'Peter', 'Steven'], 
+    hasDtiverLicense:false,
+
+    // calcAge: function(birthYeah){
+    //     return 2037 - birthYeah;
+    // }
+    
+    // calcAge: function(){
+    //     //console.log(this);
+    //      return 2037 - this.birthYeah;
+    // }
+    calcAge: function(){
+         this.age = 2037 - this.birthYeah;
+         return this.age;
+    },
+
+   getSummary: function(){
+     if(this.hasDtiverLicense){
+        return `${this.firstName} is a ${this.calcAge()}-year old teacher, and he has a driver's license`; 
+     }
+     else{
+        return `${this.firstName} is a ${this.calcAge()}-year old teacher, and he has no driver's license`; 
+     }
+   }
+};
+
+// console.log(jonasOne2['calcAge'](1991));
+// console.log(jonasOne2.calcAge(1991));
+console.log(jonasOne2.calcAge());
+
+console.log(jonasOne2.age);
+console.log(jonasOne2.age);
+console.log(jonasOne2.age);
+console.log(jonasOne2.getSummary());
+
+ 
