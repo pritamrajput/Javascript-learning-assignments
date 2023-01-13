@@ -240,3 +240,49 @@ const jonasOne = {
  job: 'Teacher',
  friends: ['Michael', 'Peter', 'Steven']
 };
+
+// console.log(jonasOne);
+
+
+// ----------------------------------------------------------------------
+
+// ********* Lecture 26 : DOT vs Bracket notation ************
+
+// ----------------------------------------------------------------------
+
+const jonasOne1 = {
+    firstName: 'jonas',
+    lastName: 'schmedtmann',
+    age: 2037 - 1998,
+    job: 'Teacher',
+    friends: ['Michael', 'Peter', 'Steven'] 
+};
+
+console.log(jonasOne1.firstName);
+console.log(jonasOne1['lastName']);
+
+const nameKey = 'Name';
+
+console.log(jonasOne1["first" + nameKey]);
+console.log(jonasOne1["last" + nameKey]);
+
+// console.log(jonasOne1.'first' + nameKey); --- This is not possible with DOT notation.
+
+const interestedIn = prompt('what do you want to know about jonas ? Choose between firstName, lastName, age, job and friends');
+
+
+if(jonasOne1[interestedIn]){
+    console.log(jonasOne1[interestedIn]);
+}
+else{
+    console.log("Wrong input ! Choose between firstName, lastName, age, job and friends");
+}
+
+jonasOne1.location = 'Portugal';
+jonasOne1['twitter'] = "@jonasschmedtmann";
+console.log(jonasOne1);
+
+console.log(jonasOne1.firstName + " has " + jonasOne1.friends.length + " friends, and his best friend is "+jonasOne1.friends[0] );
+// we can also do this with template literals
+
+console.log(`${jonasOne1.firstName} has ${jonasOne1.friends.length} friends, and his best friend is ${jonasOne1.friends[0]}`);
