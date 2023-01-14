@@ -345,3 +345,66 @@ console.log(jonasOne2.getSummary());
 for(let rep = 1; rep <=10; rep++){
     console.log(`Lifting weights repeatation ${rep}`)
 }
+
+
+// -----------------------------------------------------------------------------
+
+// ********* Lecture 29 : looping arrays, Breaking and continuing ************
+
+// -----------------------------------------------------------------------------
+const jonas1 = [
+    'jonas',
+    'schmedtmann',
+    2037 - 1991,
+    'teacher',
+    ['Michael','Peter', 'Steven'],
+    true
+];
+
+const types = []; 
+
+for(let i = 0 ; i<=jonas1.length-1 ; i++){
+
+   // Reading from jonas1 array
+    console.log(jonas1[i], typeof jonas1[i]);
+
+   // Filling an empty array with types of element in jonas1 array1
+    types[i] = typeof jonas1[i];
+    types.push(typeof jonas1[i]);
+}
+
+console.log(types);
+
+const years1 = [1992, 1991, 1997, 2007];
+
+const agesNew = [];
+
+for(let i = 0; i<=years1.length - 1; i++){
+    //agesNew[i] = 2037 - years1[i];
+    agesNew.push(2037 - years1[i]);
+}
+
+console.log(agesNew);
+
+//continue and break
+// continue --- To exit the current iteration of the loop and continue to the next one.
+// break --- It is to terminate the whole loop.
+
+console.log(`---ONLY STRING---`)
+
+for(let i = 0 ; i<=jonas1.length-1 ; i++){
+    
+    if(typeof jonas1[i] !== 'string') continue;
+     console.log(jonas1[i], typeof jonas1[i]);
+
+ }
+
+ console.log(`---BREAK WITH NUMBER---`)
+
+for(let i = 0 ; i<=jonas1.length-1 ; i++){
+    
+    if(typeof jonas1[i] === 'number') break;
+    
+     console.log(jonas1[i], typeof jonas1[i]);
+
+ }
