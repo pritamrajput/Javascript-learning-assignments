@@ -336,3 +336,12 @@ console.log(jonasOne2.age);
 console.log(jonasOne2.getSummary());
 
  
+// ----------------------------------------------------------------------
+
+// ********* Lecture 28 : for loop ************
+
+// ----------------------------------------------------------------------
+
+for(let rep = 1; rep <=10; rep++){
+    console.log(`Lifting weights repeatation ${rep}`)
+}
