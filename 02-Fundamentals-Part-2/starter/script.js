@@ -438,3 +438,29 @@ for(let exercise = 1; exercise<4; exercise++){
         console.log(`Exercise ${exercise}: Lifting weight repeatation ${rep}`);
     }
 }
+
+
+ // ----------------------------------------------------------------------------
+
+// ********* Lecture 31 : while loop ************
+
+// -----------------------------------------------------------------------------
+
+let rep1 = 1;
+
+while(rep1<=10){
+console.log("Repeat the exercise 😁");
+rep1++;
+}
+
+let dice = Math.trunc(Math.random()*6 + 1);
+
+while (dice !== 6){
+    console.log(`The dice value is ${dice}`);
+    dice = Math.trunc(Math.random()*6 + 1);
+    if(dice === 6){
+        console.log(`The 6 on dice is about to come`);
+    }
+}
+
+//Conclusion of using while loop :- While loop doesn't really have to depend on counter variable. so whenever we need a loop without a counter variable we can use while loop
