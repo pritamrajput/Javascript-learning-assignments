@@ -21,13 +21,24 @@ document.querySelector('.check').addEventListener('click', function (){
 
     const guess = Number(document.querySelector('.guess').value);
     console.log(guess, typeof guess);
-
+    
+    //When no number
     if(!guess){
         document.querySelector('.message').textContent = '⛔ No Number';
     }
+
+    //When a player wins
     else if(guess === secretNumber){
         document.querySelector('.message').textContent = '🎉 Correct Number!'; 
+        const body = document.querySelector("body");
+
+    //Note : whenever we manipulating style with the help of javascript we always specify a string.
+        body.style.backgroundColor = '#60b347' ;
+    // Note : The styles we apply using javascript are "inline styles"
+        document.querySelector(".number").style.width = '30rem';
     }
+
+    //When number is too high
     else if(guess > secretNumber){
        if(score>1){
         document.querySelector('.message').textContent = '📈 Too High!';
@@ -39,6 +50,8 @@ document.querySelector('.check').addEventListener('click', function (){
         document.querySelector(".score").textContent = '0';
       }  
     }
+
+    //When number is too low
     else if(guess < secretNumber){
        
         if(score>1){
