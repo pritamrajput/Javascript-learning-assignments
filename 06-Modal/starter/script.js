@@ -26,3 +26,10 @@ const callhidden = function(){
 btnCloseModal.addEventListener('click',callhidden);
 
 overlay.addEventListener('click', callhidden);
+
+document.addEventListener('keydown', function(e){
+console.log(e.key);
+if(e.key === 'Escape' && !modal.classList.contains('hidden')){
+        callhidden();
+}
+})
