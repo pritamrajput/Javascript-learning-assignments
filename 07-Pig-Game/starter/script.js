@@ -79,3 +79,19 @@ btnHold.addEventListener('click', function(){
    }
 }
 }) 
+
+btnNew.addEventListener('click', function(){
+    score0El.textContent = 0;
+    score1El.textContent = 0;
+    current0El.textContent = 0;
+    current1El.textContent = 0;
+    playing = true;
+    if(activePlayer === 1){
+     document.querySelector(`.player--${activePlayer}`).classList.remove('player--winner');  
+     document.querySelector(`.player--${activePlayer}`).classList.remove('player--active');
+     document.querySelector(`.player--0`).classList.add('player--active');
+    }
+    else{
+     document.querySelector(`.player--${activePlayer}`).classList.remove('player--winner');
+    }
+})
