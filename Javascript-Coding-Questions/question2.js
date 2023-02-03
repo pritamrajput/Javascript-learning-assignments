@@ -25,6 +25,9 @@
 //     }
 //     return median;
 // };
+
+
+// Ques 2 Check whether a number is palindrome or not
 /**
  * @param {number} x
  * @return {boolean}
