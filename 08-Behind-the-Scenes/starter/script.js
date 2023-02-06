@@ -44,9 +44,11 @@ let job = 'teacher';
 const year = 1991;
 
 // Functions
+// Note :- The only function we can use before declaration is function declaration
 console.log(addDecl(2,3));
-console.log(addExpr(2,3));
-console.log(addArrow(2,3));
+console.log(addExpr);
+// console.log(addExpr(2,3));
+// console.log(addArrow(2,3));
 
 function addDecl(a,b){
     return a + b;
@@ -58,4 +60,15 @@ var addExpr = function(a,b){
 
 var addArrow = () => {
     return a + b;
+}
+
+
+// Example on pitfalls of hoisting
+console.log(numProducts);
+if(!numProducts) deleteShoppingCart();
+
+var numProducts = 10;
+
+function deleteShoppingCart(){
+    console.log('All Products deleted');
 }
