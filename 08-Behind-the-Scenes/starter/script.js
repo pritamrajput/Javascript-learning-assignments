@@ -1,4 +1,4 @@
-// 'use strict';
+'use strict';
 
 // function calcAge(birthYear){
 //     const age = 2037 - birthYear;
@@ -75,4 +75,42 @@
 
 // Lecture 97 This keyword in practice
 
+// This keyowrd on global object
 console.log(this);
+
+
+// This keyword inside a function
+const calcAge = function(birthYear){
+    console.log(2037 - birthYear);
+    console.log(this);
+}
+calcAge(1995);
+
+// This keyword inside an arrow function
+const calcAgeArrow = (birthYear)=>{
+    console.log(2037 - birthYear);
+    console.log(this);
+}
+calcAgeArrow(1995)
+
+// This keyword inside a method of an object
+
+const jonas = {
+    year: 1991,
+    calcAge: function(){
+        console.log(this);
+        console.log(2037 - this.year);
+    }
+}
+
+jonas.calcAge();
+
+const matila = {
+    year : 2017,
+}
+
+matila.calcAge = j 
+matila.calcAge();
+
+const f = jonas.calcAge ; // Copying the function to f variable as functions in javascript is just a value
+f(); // This f() function is now just a regular function call it is not attached to any object. There is no owner of the f() function anymore. Therefore it will have 'this' keyword as undefined and this.year will give an error
