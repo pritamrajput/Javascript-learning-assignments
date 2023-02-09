@@ -42,17 +42,17 @@ var isPalindrome = function(x) {
      rem = rev % 10;
        num = num*10 + rem;
        rev = Math.trunc(rev/10);
-  } 
-   if(num === x){
-       return true;
-   } 
-   else{
-       return false;
-   }
-};
-let x = 121;
-//  let rem = x % 10;
-console.log(x.toString().length);
-console.log(isPalindrome(11));
+//   } 
+//    if(num === x){
+//        return true;
+//    } 
+//    else{
+//        return false;
+//    }
+// };
+// let x = 121;
+// //  let rem = x % 10;
+// console.log(x.toString().length);
+// console.log(isPalindrome(11));
 
-console.log(1%10);
+// console.log(1%10);
