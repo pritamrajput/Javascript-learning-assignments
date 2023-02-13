@@ -170,8 +170,35 @@ addExpr(2,5);
 addExpr(2,5,8,11,9,5); //It is completely legal to add more arguments inside a function call.
 
 var addArrow = (a,b) => {
-    console.log(arguments); // Note: This statement will give an error tha arguments is not defined because Arrow function does not get "arguments" keyword.
+    // console.log(arguments); // Note: This statement will give an error tha arguments is not defined because Arrow function does not get "arguments" keyword.
     return a + b;
 };
 
 addArrow(2,5,8);
+
+
+
+// ----- Lecture 99 :- Primitive vs Objects (Primitive vs Reference types)-----
+
+const arr1 = [1,3,7,4];
+const arr2 = arr1;
+arr2[2] = 78;
+console.log(arr1);
+console.log(arr2);
+console.log(arr1 === arr2);
+
+let age = 30;
+let oldAge = age;
+age = 31;
+console.log(age);
+console.log(oldAge);
+
+const me = {
+    name:'jonas',
+    age:30
+}
+
+const friend = me;
+friend.age = 27;
+console.log(me);
+console.log(friend);
