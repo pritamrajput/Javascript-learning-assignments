@@ -76,41 +76,102 @@
 // Lecture 97 This keyword in practice
 
 // This keyowrd on global object
-console.log(this);
+// console.log(this);
 
 
-// This keyword inside a function
-const calcAge = function(birthYear){
-    console.log(2037 - birthYear);
-    console.log(this);
-}
-calcAge(1995);
+// // This keyword inside a function
+// const calcAge = function(birthYear){
+//     console.log(2037 - birthYear);
+//     console.log(this);
+// }
+// calcAge(1995);
 
-// This keyword inside an arrow function
-const calcAgeArrow = (birthYear)=>{
-    console.log(2037 - birthYear);
-    console.log(this);
-}
-calcAgeArrow(1995)
+// // This keyword inside an arrow function
+// const calcAgeArrow = (birthYear)=>{
+//     console.log(2037 - birthYear);
+//     console.log(this);
+// }
+// calcAgeArrow(1995)
 
-// This keyword inside a method of an object
+// // This keyword inside a method of an object
 
+// const jonas = {
+//     year: 1991,
+//     calcAge: function(){
+//         console.log(this);
+//         console.log(2037 - this.year);
+//     }
+// }
+
+// jonas.calcAge();
+
+// const matila = {
+//     year : 2017,
+// }
+
+// matila.calcAge = j 
+// matila.calcAge();
+
+// const f = jonas.calcAge ; // Copying the function to f variable as functions in javascript is just a value
+// f(); // This f() function is now just a regular function call it is not attached to any object. There is no owner of the f() function anymore. Therefore it will have 'this' keyword as undefined and this.year will give an error
+
+
+
+// Lecture 98 Regular function vs Arrow function
+
+// var firstName = "Matilda"
 const jonas = {
-    year: 1991,
-    calcAge: function(){
-        console.log(this);
+    firstName : "jonas",
+    year : 1991,
+    calcAge :  function(){
+        // console.log(this);
         console.log(2037 - this.year);
-    }
-}
 
+        // Problem using this keyword inside isMillenial function
+    //   const isMillenial = function(){
+    //     console.log(this);
+    //     console.log(this.year >= 1981 && this.year <= 1996);
+    //   };
+
+    // Solution 1
+    // const self = this; //self or that
+    // const isMillenial = function(){
+    //         console.log(self);
+    //         console.log(self.year >= 1981 && self.year <= 1996);
+    //       };
+    //  isMillenial();
+    // },
+
+    // solution 2 using arrow function
+    const isMillenial = () => {
+        console.log(this);
+        console.log(this.year >= 1981 && this.year <= 1996);
+      };
+ isMillenial();
+},
+
+    greet:function(){
+        console.log(this);
+        console.log(`Hey ${this.firstName}`);
+    } 
+}
 jonas.calcAge();
 
-const matila = {
-    year : 2017,
-}
+jonas.greet();
 
-matila.calcAge = j 
-matila.calcAge();
 
-const f = jonas.calcAge ; // Copying the function to f variable as functions in javascript is just a value
-f(); // This f() function is now just a regular function call it is not attached to any object. There is no owner of the f() function anymore. Therefore it will have 'this' keyword as undefined and this.year will give an error
+// Arguments keyword
+const addExpr = function(a,b){
+    console.log(arguments);
+    return a + b;
+};
+addExpr(2,5);
+
+addExpr(2,5,8,11,9,5); //It is completely legal to add more arguments inside a function call.
+
+var addArrow = (a,b) => {
+    console.log(arguments); // Note: This statement will give an error tha arguments is not defined because Arrow function does not get "arguments" keyword.
+    return a + b;
+};
+
+addArrow(2,5,8);
