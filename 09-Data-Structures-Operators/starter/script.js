@@ -69,3 +69,21 @@ console.log(main,secondary);
 
 const [starter, mainCourse] = restaurant.order(2,0);
 console.log(starter, mainCourse);
+
+// What happens if we have an nested array ?
+const nested =  [2, 4, [5,6]];
+const [i, ,j] = nested;
+console.log(i,j); // Output :- 2, [5,6] 
+
+//But what if we want every individual values ?. Well than, we have to do destructing inside a destructing 
+const [i1, , [j1,k1]] = nested; // This will do destructing inside destructing
+console.log(i1,j1,k1);  // output >- 2, 5, 6;
+
+// Another feature of destructing : you can also set default values for the variables when we are extracting them. It's gonna be very usefull in the case when we don't know the length of the array
+// without Default values
+const [p, q, r] = [8,9];
+console.log(p,q,r); // output : 8 9 undefined
+
+// with Default values
+const [p1 = 1, q1 = 1, r1 = 1] = [8,9];
+console.log(p1, q1, r1); // output :- 8 9 1
