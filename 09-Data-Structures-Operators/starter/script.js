@@ -27,3 +27,14 @@ const restaurant = {
     },
   },
 };
+
+const arr = [2,4,3];
+// without destructuring 
+const a = arr[0];
+const b = arr[1];
+const c = arr[2];
+
+// with destructing 
+const [x,y,z] = arr;
+
+console.log(x,y,z);
