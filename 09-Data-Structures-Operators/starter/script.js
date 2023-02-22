@@ -12,6 +12,10 @@ const restaurant = {
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
+  order: function(startIndex, mainIndex){
+    return [this.starterMenu[startIndex],this.mainMenu[mainIndex]];
+  },
+
   openingHours: {
     thu: {
       open: 12,
@@ -36,5 +40,32 @@ const c = arr[2];
 
 // with destructing 
 const [x,y,z] = arr;
-
 console.log(x,y,z);
+// Note :- destructing will not affect the original array
+console.log(arr);
+
+//This will give only 1st two elements of the array
+const [first, second] = restaurant.categories;
+console.log(first, second);
+
+// If we want to get only first  and third element from the array than we can write. Thid will skip the second element inside an array and get the third element of the array
+const [first1, ,second2] = restaurant.categories;
+console.log(first1, second2);
+
+// Note : we use destructuring to do lot of cool things. For example let say the owner of the restaurant decided to switch the first and second categories. Now the primary is italian and the secondary is vegetarian but now the owner wants to switch it.
+let [main, ,secondary] = restaurant.categories;
+console.log(main,secondary);
+// If we want to switch these two varibles without destructing than we have to do it like this:
+const temp = main; 
+main = secondary;
+secondary = temp;
+console.log(main,secondary);
+// But with destructing we can make it lot easier
+[main,secondary]=[secondary,main]
+console.log(main,secondary);
+
+
+// Another trick with the destructing is that we can have a function returning an array and than we can immediately destruct the results into diffrent variables. So this basically allow us to return multiple values from a function.
+
+const [starter, mainCourse] = restaurant.order(2,0);
+console.log(starter, mainCourse);
