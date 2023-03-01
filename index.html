@@ -5,76 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-     .entries{
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-     }
-    </style>
 </head>
 <body>
-
-    <input type="number" name="" id="num1">
-    <input type="number" id = "num2">
-    <button class="sumBTN">Sum</button>
-    <div class="entries">
-        <!-- <div class="num1"></div>
-        <div class="num2"></div>
-        <div class="sum"></div> -->
-    </div>
     
 
     <script>
-
-        let num = "123";
-        let newstr = "";
-        console.log(num.length);
-        for(let i = num.length - 1;i>=0;i--){
-          newstr =  newstr + num[i];
-        }
-        console.log(newstr);
-        
-
-        // const btn1 = document.querySelector(".sumBTN");
-        // const numValue1 = document.getElementById("num1");
-        // const numValue2 = document.getElementById("num2");
-        // const body = document.querySelector("body")
-        // const entry = document.querySelector(".entries");
-        // // const num1 = document.querySelector(".num1");
-
-        // // const num2 = document.querySelector(".num2");
-        // // const sum1 = document.querySelector(".sum");
-        // let sum = 0;
-        // // console.log(body);
-        
-        // btn1.addEventListener("click",function(){
-        //     const value1 = Number(numValue1.value);
-        //     const value2 = Number(numValue2.value);
-        //     sum = value1 + value2;
-        //     // alert(`Sum of the two number is ${Number(value1) + Number(value2)}`);
-        //     const mainDiv = document.createElement("div");
-        //     entry.appendChild(mainDiv);
-        //    const num1 = document.createElement("div");
-        //    const num2 = document.createElement("div");
-        //    const sum1 = document.createElement("div");
-        //    const deleteBtn = document.createElement("button");
-        //    deleteBtn.textContent = "Delete";
-        //    mainDiv.appendChild(deleteBtn);
-        //    mainDiv.appendChild(num1);
-        //    mainDiv.appendChild(num2);
-        //    mainDiv.appendChild(sum1);
-        //    num1.textContent = value1;
-        //    num2.textContent = value2;
-        //    sum1.textContent = sum;
-
-        //    deleteBtn.addEventListener("click",function(x){
-        //      const innerDiv = x.currentTarget.parentElement;
-        //      innerDiv.remove();
-        //    })
-        // })
-
-
         // let arr1 = [2, 5, 3, 7, 1, 5, 8, 3];
         // let left = 0;
         // let right = arr1[1];
@@ -99,24 +34,26 @@
         //  }
         // }
 
-        // let num = 7;
-        // for(let i = 1;i<=7;i++){
-        //     let str = "";
-        //     let str1 = "";
-        //     if(i >= 1 && i<5){
-        //         for(j = i;j<=4;j++){
-        //        str = str + j + " ";
-        //     }
-        //     console.log(str);
-        //     }
+        let num = 7;
+        for(let i = 1;i<=7;i++){
+            let str = "";
+            let str1 = "";
+            for(j = i;j<=4;j++){
+               str = str + j + " ";
+            }
+            console.log(str);
 
-        //     if(i >= 5){
-        //        for(k = 3;k<=4;k++){
-        //        str1 = str1 + k + " ";
-        //     }
-        //     console.log(str1);
-        //     }     
-        // }
+            // for(k = 3;j<=4;k--){
+            //    str1 = str1 + k + " ";
+            // }
+            // console.log(str1);
+            if(i >= 5){
+               for(k = 3;k<=4; k++){
+               str1 = str1 + k + " ";
+            }
+            console.log(str1);
+            }     
+        }
     </script>
 </body>
 </html>
