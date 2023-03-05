@@ -147,80 +147,107 @@ const restaurant = {
 
 /////////////////////////...... Spread operator.........../////////////////////////
 
-const arr1= [7,8 ,9];
-const badArr = [1, 2, arr1[0], arr1[1], arr1[2]]; // without spread operator
-console.log(badArr);
+// const arr1= [7,8 ,9];
+// const badArr = [1, 2, arr1[0], arr1[1], arr1[2]]; // without spread operator
+// console.log(badArr);
 
-const newArr1 = [1,2,...arr1]
-console.log(newArr1);
+// const newArr1 = [1,2,...arr1]
+// console.log(newArr1);
 
-console.log(...newArr1);
-console.log(newArr1);
+// console.log(...newArr1);
+// console.log(newArr1);
 
-const newMenu = [...restaurant.mainMenu, "Gnocci"];
-console.log(newMenu);
+// const newMenu = [...restaurant.mainMenu, "Gnocci"];
+// console.log(newMenu);
 
-// copy 
-const mainMenuCopy = [...restaurant.mainMenu];
-console.log(mainMenuCopy);
+// // copy 
+// const mainMenuCopy = [...restaurant.mainMenu];
+// console.log(mainMenuCopy);
 
-//join 2 arrays
-const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
-console.log(menu);
+// //join 2 arrays
+// const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+// console.log(menu);
 
-// Iterables : arrays, strings , maps, sets but NOT Objects.
-const str = 'jonas';
-const letters = [...str, " ", "S."];
-console.log(letters);
-console.log(...str);
+// // Iterables : arrays, strings , maps, sets but NOT Objects.
+// const str = 'jonas';
+// const letters = [...str, " ", "S."];
+// console.log(letters);
+// console.log(...str);
 
-// console.log(`${...str} Schmedtmann`); // This will give errors.
+// // console.log(`${...str} Schmedtmann`); // This will give errors.
 
-const ingredients = [prompt("Let's make pasta! ingredient1?"), prompt("Let's make pasta! ingredient2?"), prompt("Let's make pasta! ingredient3?")];
+// const ingredients = [prompt("Let's make pasta! ingredient1?"), prompt("Let's make pasta! ingredient2?"), prompt("Let's make pasta! ingredient3?")];
 
-console.log(ingredients);
+// console.log(ingredients);
 
-restaurant.orderPasta(ingredients[0], ingredients[1], ingredients[2]);
-restaurant.orderPasta(...ingredients);
+// restaurant.orderPasta(ingredients[0], ingredients[1], ingredients[2]);
+// restaurant.orderPasta(...ingredients);
 
-// spread operator with Objects
+// // spread operator with Objects
 
-const newRestaurant =  {foundIn : 1998,...restaurant, founder : 'Guiseppe'};
-console.log(newRestaurant);
-// using spread operator to make shallow copy of the object.
-const restaurantCopy = {...restaurant};
-restaurantCopy.name = 'Ristoranate Roma';
-console.log(restaurant.name);
-console.log(restaurantCopy.name);
+// const newRestaurant =  {foundIn : 1998,...restaurant, founder : 'Guiseppe'};
+// console.log(newRestaurant);
+// // using spread operator to make shallow copy of the object.
+// const restaurantCopy = {...restaurant};
+// restaurantCopy.name = 'Ristoranate Roma';
+// console.log(restaurant.name);
+// console.log(restaurantCopy.name);
 
-////////////........ Rest Pattern and Parameters ...........///////////////
+// ////////////........ Rest Pattern and Parameters ...........///////////////
 
-// SPREAD, because on RIGHT side of = (assignment operator).
-const arr2 = [1,2, ...[3,4]];
+// // SPREAD, because on RIGHT side of = (assignment operator).
+// const arr2 = [1,2, ...[3,4]];
 
-// REST, because on LEFT side of = (assignmetn operator).
-const [a, b, ...others] = [1, 2, 4, 5, 2, 5, 6, 9, 10];
-console.log(a, b, others); 
+// // REST, because on LEFT side of = (assignmetn operator).
+// const [a, b, ...others] = [1, 2, 4, 5, 2, 5, 6, 9, 10];
+// console.log(a, b, others); 
 
-const [pizza, , risotto, ...otherFood] = [...restaurant.mainMenu, ...restaurant.starterMenu];
-console.log(pizza, risotto, otherFood);
+// const [pizza, , risotto, ...otherFood] = [...restaurant.mainMenu, ...restaurant.starterMenu];
+// console.log(pizza, risotto, otherFood);
 
-// REST in objects
+// // REST in objects
 
-const {sat, ...weekdays} = restaurant.openingHours;
-console.log(sat, weekdays);
+// const {sat, ...weekdays} = restaurant.openingHours;
+// console.log(sat, weekdays);
 
-// REST in functions
+// // REST in functions
 
-const add = function(...numbers){
-console.log(numbers);
+// const add = function(...numbers){
+// console.log(numbers);
+// }
+
+// add(1, 3, 6);
+// add(3, 7, 6, 4, 3);
+// add(3, 6, 7, 8, 7 ,6, 3, 1);
+
+// const x = [1, 3, 7];
+// add(...x);
+
+// restaurant.orderPizza('mushroom', 'onion', 'olives', 'spinach');
+
+// Short circuiting && and ||
+
+console.log(`-----OR-----`);
+console.log(3 || 'jonas');
+console.log(''||'jonas');
+console.log(true || 0);
+console.log(undefined || null);
+console.log(undefined || 0 || '' || 'Hello' || 23 || null);
+
+// restaurant.numGuests = 23;
+const guest1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guest1);
+
+const guest2 = restaurant.numGuests || 10;
+console.log(guest2);
+
+console.log(`-----AND-----`);
+console.log(0 && 'Jonas');
+console.log(7 && 'jonas');
+console.log('Hello' && 23 && null && 'jonas');
+
+if(restaurant.orderPizza){
+  restaurant.orderPizza('mushroom', 'spinach');
 }
 
-add(1, 3, 6);
-add(3, 7, 6, 4, 3);
-add(3, 6, 7, 8, 7 ,6, 3, 1);
-
-const x = [1, 3, 7];
-add(...x);
-
-restaurant.orderPizza('mushroom', 'onion', 'olives', 'spinach');
+restaurant.orderPizza && restaurant.orderPizza('mushroom','spinach')
