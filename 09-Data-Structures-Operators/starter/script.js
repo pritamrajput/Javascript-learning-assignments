@@ -39,7 +39,13 @@ const restaurant = {
   // Order pasta 
   orderPasta: function(ing1, ing2, ing3){
    console.log(`This is your delicious pasta with ${ing1}, ${ing2} and ${ing3}`); 
-  }
+  },
+
+  // Order Pizza
+   orderPizza: function(mainIngradient, ...otherIngredient){
+     console.log(mainIngradient);
+     console.log(otherIngredient);
+   }
 };
 
 //////////////////////// Destructuring Objects ///////////////
@@ -186,3 +192,35 @@ const restaurantCopy = {...restaurant};
 restaurantCopy.name = 'Ristoranate Roma';
 console.log(restaurant.name);
 console.log(restaurantCopy.name);
+
+////////////........ Rest Pattern and Parameters ...........///////////////
+
+// SPREAD, because on RIGHT side of = (assignment operator).
+const arr2 = [1,2, ...[3,4]];
+
+// REST, because on LEFT side of = (assignmetn operator).
+const [a, b, ...others] = [1, 2, 4, 5, 2, 5, 6, 9, 10];
+console.log(a, b, others); 
+
+const [pizza, , risotto, ...otherFood] = [...restaurant.mainMenu, ...restaurant.starterMenu];
+console.log(pizza, risotto, otherFood);
+
+// REST in objects
+
+const {sat, ...weekdays} = restaurant.openingHours;
+console.log(sat, weekdays);
+
+// REST in functions
+
+const add = function(...numbers){
+console.log(numbers);
+}
+
+add(1, 3, 6);
+add(3, 7, 6, 4, 3);
+add(3, 6, 7, 8, 7 ,6, 3, 1);
+
+const x = [1, 3, 7];
+add(...x);
+
+restaurant.orderPizza('mushroom', 'onion', 'olives', 'spinach');
