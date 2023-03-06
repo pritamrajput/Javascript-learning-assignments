@@ -250,4 +250,11 @@ if(restaurant.orderPizza){
   restaurant.orderPizza('mushroom', 'spinach');
 }
 
-restaurant.orderPizza && restaurant.orderPizza('mushroom','spinach')
+restaurant.orderPizza && restaurant.orderPizza('mushroom','spinach');
+
+// restaurant.numGuests = 0;
+const guests =  restaurant.numGuests || 10;
+console.log(guests);
+
+const guestCorrect = restaurant.numGuests ?? 10;
+console.log(guestCorrect);
