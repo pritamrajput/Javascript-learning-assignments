@@ -252,9 +252,51 @@ if(restaurant.orderPizza){
 
 restaurant.orderPizza && restaurant.orderPizza('mushroom','spinach');
 
+//////////-----NUllish coalescing operator-----//////////
+
 // restaurant.numGuests = 0;
 const guests =  restaurant.numGuests || 10;
 console.log(guests);
 
 const guestCorrect = restaurant.numGuests ?? 10;
 console.log(guestCorrect);
+
+
+//////////-------- Logical Assignment Operator --------///////////
+
+const rest1 = {
+  name: 'capri',
+  // numGuests : 20,
+  numGuests : 0,
+};
+
+const rest2 = {
+  name: 'La Piazza',
+  owner : 'Giovanni Rossi',
+};
+
+// setting default value of 10 in the object that does not have numGuests property
+
+// OR assignment operator
+// rest2.numGuests = rest2.numGuests || 10; // Less concise way.
+// rest1.numGuests = rest1.numGuests || 10; // Less concise way.
+
+rest2.numGuests ||= 10; // More concise way. 
+rest1.numGuests ||= 10; // More concise way. 
+console.log(rest1);
+console.log(rest2);
+
+// nullish assignment operator
+rest2.numGuests ??= 10; 
+rest1.numGuests ??= 10;
+console.log(rest1);
+console.log(rest2);
+
+// && assignment operator
+// rest1.owner = rest1.owner && '<Anonymous>';
+// rest2.owner = rest2.owner && '<Anonymous>';
+rest1.owner &&= '<Anonymous>';
+rest2.owner &&= '<Anonymous>';
+
+console.log(rest1);
+console.log(rest2);
