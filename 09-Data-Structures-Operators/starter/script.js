@@ -5,6 +5,21 @@ const flights =
   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
 
 // Data needed for first part of the section
+const weekdays = ['Mon','Tue', 'Thu', 'Fri', 'Sat', 'Sun']
+const openingHours1 = {
+  [weekdays[2]]: {
+    open: 12,
+    close: 22,
+  },
+  [weekdays[3]]: {
+    open: 11,
+    close: 23,
+  },
+  sat: {
+    open: 0, // Open 24 hours
+    close: 24,
+  } 
+}
 const restaurant = {
   name: 'Classico Italiano',
   location: 'Via Angelo Tavanti 23, Firenze, Italy',
@@ -15,21 +30,11 @@ const restaurant = {
   order: function(startIndex, mainIndex){
     return [this.starterMenu[startIndex],this.mainMenu[mainIndex]];
   },
-
-  openingHours: {
-    thu: {
-      open: 12,
-      close: 22,
-    },
-    fri: {
-      open: 11,
-      close: 23,
-    },
-    sat: {
-      open: 0, // Open 24 hours
-      close: 24,
-    },
-  },
+  
+  //Before ES6 placing external objects inside an object
+  openingHours : openingHours1,
+  // After ES6 enhanced object literals
+  openingHours1,
    
   // Practical application of desctructing objects 
   orderDelivery: function({starterIndex = 1,mainIndex = 0,time = '20:00',address}){
@@ -41,12 +46,43 @@ const restaurant = {
    console.log(`This is your delicious pasta with ${ing1}, ${ing2} and ${ing3}`); 
   },
 
+  // Newer way to write method in ES6 :- we just have to write the method name and than define it
+  orderPasta(ing1, ing2, ing3){
+    console.log(`This is your delicious pasta with ${ing1}, ${ing2} and ${ing3}`); 
+   },
+
   // Order Pizza
    orderPizza: function(mainIngradient, ...otherIngredient){
      console.log(mainIngradient);
      console.log(otherIngredient);
    }
 };
+
+// Without optional chaining
+if(restaurant.openingHours && restaurant.openingHours.mon){
+  console.log(restaurant.openingHours.mon.open)
+}
+
+// with optional chaining
+console.log(restaurant.openingHours.mon?.open);
+console.log(restaurant.openingHours?.mon?.open);
+
+// Example from real world problem of using optional chaining   
+const days = ['Mon','Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+
+for(const day of days){
+ const open = restaurant.openingHours[day]?.open ?? 'closed';
+ console.log(`On ${day}, we open at ${open}`);
+}
+
+// optional chaining on methods
+console.log(restaurant.order?.(0,1) ?? "Method does not exist");
+console.log(restaurant.orderfocasio?.(0,1) ?? "Method does not exist");
+
+// Arrays
+// const users = [{name:'Jonas', email:'hello@jonas.io'}];
+const users = [];
+console.log(users[0]?.name ?? 'user array is empty');
 
 //////////////////////// Destructuring Objects ///////////////
 // restaurant.orderDelivery({
@@ -373,6 +409,7 @@ game.printGoals(...game.scored);
 
 const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 
+// Lecture on for of loop
 for(const item of menu){
   console.log(item);
 }
@@ -385,4 +422,30 @@ console.log([...menu.entries()]);
 
 for(const [i, el] of menu.entries()){
   console.log(`${i + 1}: ${el}`);
+}
+
+console.log(restaurant);
+
+
+// Property NAMES
+const properties = Object.keys(openingHours1);
+console.log(properties);
+
+let openStr = `we are open on ${properties.length} days:`
+
+for(const day of Object.keys(openingHours1)){
+   openStr+= ` ${day}`
+}
+console.log(openStr);
+
+// Property Values
+const values = Object.values(openingHours1);
+console.log(values);
+
+// Entire Object
+const entries = Object.entries(openingHours1);
+console.log(entries);
+
+for(const [key,{open,close}] of entries){
+  console.log(`On ${key} we open at ${open} and close at ${close}`);
 }
