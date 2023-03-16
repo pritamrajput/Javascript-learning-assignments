@@ -449,3 +449,40 @@ console.log(entries);
 for(const [key,{open,close}] of entries){
   console.log(`On ${key} we open at ${open} and close at ${close}`);
 }
+
+// Lecture 116 SETS
+const orderSet = new Set([
+  'Pizza',
+  'Rissoto',
+  'Pizza',
+  'Pasta',
+  'Pizza',
+  'Pizza',
+  'Paneer',
+])
+console.log(orderSet);
+console.log(orderSet.size);
+console.log(orderSet.has('Pizza'));
+console.log(orderSet.has("Bread"));
+console.log(new Set("Pritam"));
+orderSet.add("Garlic bread");  // Adding value to the set
+orderSet.add("Garlic bread");
+orderSet.delete("Paneer"); // Removing value from the set
+console.log(orderSet)
+for(const order of orderSet){
+  console.log(order);  // Looping over a set using for of loop
+}
+orderSet.clear(); // Clearing everything from the set
+console.log(orderSet)
+
+// Example of removing duplicates from an array.
+
+const staff = ['Waiter','Manager','Waiter', 'Chef', 'Waiter', 'Chef'];
+// const staffUnique = new Set(staff); // Converting an ARRAY to a Set.
+const staffUnique = [...new Set(staff)]; // Converting a set to an Array.
+console.log(staffUnique);
+
+// Using a set to calculate how many unique items are there in an array
+console.log(new Set(['Waiter','Manager','Waiter', 'Chef', 'Waiter', 'Chef']).size);
+// Using a set to calculate how many unique letters are there in a string
+console.log(new Set("jonasschmedtmann").size);
