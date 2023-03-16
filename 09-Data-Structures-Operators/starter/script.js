@@ -486,3 +486,75 @@ console.log(staffUnique);
 console.log(new Set(['Waiter','Manager','Waiter', 'Chef', 'Waiter', 'Chef']).size);
 // Using a set to calculate how many unique letters are there in a string
 console.log(new Set("jonasschmedtmann").size);
+
+//Lecture 117
+
+const rest = new Map(); // Easy way to create a map is to create an empty MAP.
+rest.set('name','Classico Italiano');
+rest.set(1,'Firanze, Italy');
+rest.set(2,'Lisbon, Portugal'); // 1. Set method that we call on a MAP not only update the MAP but also returns the MAP.
+//2. SET method actually returns the updated MAP allows us to chain the SET method.
+rest.set('categories',['Italian', 'Pizzeria', 'Vegetarian', 'Organic']).set('open',11).set('close',23).set(true,'we are open :D').set(false,'we are closed :(');
+console.log(rest);
+console.log(rest.get('name'));
+console.log(rest.get(true));
+
+const time = 12;
+console.log(rest.get(time>rest.get('open') && time<rest.get('close')));
+console.log(rest.has('categories'));
+rest.delete(2);
+console.log(rest);
+console.log(rest.size);
+// rest.clear();
+
+// Note :- we can use array and Objects as the MAP keys
+let arr = [1,2];
+rest.set(arr,"Test");
+console.log(rest);
+// To read value stores on an array we cannot do like this because they are not the same array stored in a heap. we have to store that array value in a common array and than we can use it as a key and than we can retrive value from that key of an Array. Note rewatch the lecture on MAPS and revisit the concept already done to have better idea.
+console.log(rest.get(arr));
+
+// we can also use Object as the key in a MAP.
+rest.set(document.querySelector('h1'),'Heading');
+console.log(rest);
+
+
+// Lecture 118 MAPS iteration
+
+const question = new Map([
+  ['question','what is the best programming language in the world ?'],
+  [1, 'C'],
+  [2, 'Java'],
+  [3, 'Javscript'],
+  ['correct', 3],
+  [true, 'Correct :D'],
+  [false, 'Try Again :(']
+])
+console.log(question);
+
+// Convert object to MAP
+const hoursMap = new Map(Object.entries(openingHours1));
+console.log(hoursMap);
+
+
+// Quiz App
+console.log(question.get('question'));
+for(const [key,value] of question){
+  if(typeof key === 'number'){
+    console.log(`Answer ${key}: ${value}`);
+  }
+}
+// const answer = Number(prompt('Your Answer'));
+const answer = 3;
+console.log(answer);
+// console.log(answer === 3 ? question.get(true) : question.get(false));
+console.log(question.get(question.get('correct') === answer));
+
+// Convert MAP to an ARRAY
+console.log([...question]);
+console.log(question.entries());
+console.log(question.keys());
+console.log(question.values());
+console.log([...question.entries()]);
+console.log([...question.keys()]);
+console.log([...question.values()]);
