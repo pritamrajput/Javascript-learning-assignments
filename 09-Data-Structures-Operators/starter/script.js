@@ -607,3 +607,63 @@ console.log(new String('Pritam')); //Note:- This is the function called by javas
 
 console.log(typeof new String('Pritam')); // string primitive converted to OBJECT.
 console.log(typeof new String('Pritam').slice(1)); // converted back to string after the operation is done
+
+// Lecture 122 Working with strings PART-2
+
+const airline1 = 'TAP Air Portugal';
+console.log(airline1.toLocaleLowerCase());
+console.log(airline1.toLocaleUpperCase());
+
+// FIX capitalisation problem in a string
+const nameNotCorrect = 'prITaM';
+const nameLowerCase = nameNotCorrect.toLowerCase();
+console.log(nameLowerCase);
+const nameCorrect = nameLowerCase[0].toUpperCase() + nameLowerCase.slice(1);
+console.log(nameCorrect);
+
+// Comparing EMAILS
+const email = 'hello@jonas.io';
+const loginEmail = 'Hello@Jonas.io';
+
+const lowerEmail = loginEmail.toLowerCase();
+const trimmedEmail = lowerEmail.trim();
+console.log(trimmedEmail);
+
+const normaliseEmail =  loginEmail.toLowerCase().trim();
+console.log(normaliseEmail);
+console.log(email === normaliseEmail);
+
+// Replacing
+const priceGB = '233,97£';
+const priceUS = priceGB.replace('£','$').replace(',',".")
+console.log(priceUS);
+const announcement = "All passengers come to boarding door 23. Boarding door 23 !"
+console.log(announcement.replace('door','gate'));
+console.log(announcement.replaceAll('door','gate'));
+console.log(announcement.replace(/door/g,"gate"));
+
+// Booleans
+const planes = 'Airbus A320neo';
+console.log(planes.includes("A320"));
+console.log(planes.includes("bnb"));
+console.log(planes.startsWith("Air"));
+
+if(planes.startsWith("Airbus") && planes.endsWith("neo")){
+console.log(`Part of the NEW Airbus family`);
+}
+
+// Practise
+const checkBaggage = function (item){
+  const myItem = item.toLowerCase();
+  if(myItem.includes("knife")||myItem.includes("gun")){
+    console.log('You are NOT allowed on board');
+  }
+  else{
+    console.log('Welcome aboard !');  
+  }
+
+}
+
+checkBaggage('I have a laptop, some Food and a Pocket Knife');
+checkBaggage('I have some cold-drinks and some clothes in my bag');
+checkBaggage('I have one gun to protect myself and my personal stuff');
