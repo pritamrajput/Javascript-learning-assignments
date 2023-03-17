@@ -667,3 +667,53 @@ const checkBaggage = function (item){
 checkBaggage('I have a laptop, some Food and a Pocket Knife');
 checkBaggage('I have some cold-drinks and some clothes in my bag');
 checkBaggage('I have one gun to protect myself and my personal stuff');
+
+// Lecture 123 WORKING WITH STRING PART 3
+
+// split and join method on string
+console.log('a+very+nice+string'.split('+'));
+console.log('Pritam Chauhan'.split(' '));
+
+const [firtName, lastName] = 'Pritam Chauhan'.split(' ');
+const newName = ['Mr.', firtName, lastName.toLowerCase()].join(' ');
+console.log(newName);
+
+const capitaliseName = function(name){
+ const names = name.split(" ");
+ const namesUpper = [];
+ for(const n of names){
+    namesUpper.push(n[0].toUpperCase() + n.slice(1));
+    // namesUpper.push(n.replace(n[0],n[0].toUpperCase()));
+ }
+ console.log(namesUpper.join(' '));
+}
+
+capitaliseName("jessica and smith davis");
+capitaliseName("pritam chauhan");
+
+// Padding in the string
+const message = 'Go to gate 23!';
+console.log(message.padStart(20,'+').padEnd(30,'+'));
+console.log('Pritam'.padStart(20,'+').padEnd(30,'+'));
+
+const maskCreditCard = function(number){
+  const str1 = number + "";
+  const maskMe = str1.slice(-4);
+  return maskMe.padStart(str1.length,"*")
+}
+
+
+console.log(maskCreditCard(233456565));
+console.log(maskCreditCard(23444948294343));
+console.log(maskCreditCard(34586896696855347));
+
+// REPEAT method on string
+const message1 = "Bad weather...All Departure Delayed...";
+console.log(message1.repeat(4));
+
+const planeInline = function(n){
+console.log(`we have ${n} planes in line ${'✈️'.repeat(n)}`);
+}
+
+planeInline(3);
+planeInline(5)
