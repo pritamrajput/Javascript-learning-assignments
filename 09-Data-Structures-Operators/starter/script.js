@@ -558,3 +558,52 @@ console.log(question.values());
 console.log([...question.entries()]);
 console.log([...question.keys()]);
 console.log([...question.values()]);
+
+
+// Lecture 121 WORKING WITH STRINGS PART 1
+
+const airline = "Air Vistara India";
+const plane = 'A320';
+console.log(plane[0]);
+console.log(plane[1]);
+console.log(plane[2]);
+console.log(plane[3]);
+console.log('B373'[0]);
+
+console.log(airline.length);
+console.log('B373'.length);
+console.log(airline.indexOf('a'));
+console.log(airline.lastIndexOf('a'));
+console.log(airline.indexOf('India'));
+
+console.log(airline.slice(4)); // This will not change the original string. It is actually impossible to mutate strings as they are primitives. If we want to use this string now than we have store it into some variable or data structure
+console.log(airline.slice(4,7));
+
+console.log(airline.slice(0,airline.indexOf(" ")));
+
+console.log(airline.slice(airline.lastIndexOf(" ")+1));
+
+console.log(airline.slice(airline.lastIndexOf(" ")+1,17));
+
+console.log(airline.slice(-3));
+
+console.log(airline.slice(1,-1));
+
+const checkMiddleSeat = function(seat){
+   const s = seat.slice(-1);
+   if(s === 'B' || s === "E"){
+    console.log(`you got the middle seat`);
+   }
+   else{
+    console.log(`you got lucky!`);
+   }
+}
+
+checkMiddleSeat('11B');
+checkMiddleSeat('23C');
+checkMiddleSeat('3E');
+
+console.log(new String('Pritam')); //Note:- This is the function called by javascript behind the scenes to convert string to an object whenever we call a method on a string and when the operation is done the object is converted back to the regular string primitive. 
+
+console.log(typeof new String('Pritam')); // string primitive converted to OBJECT.
+console.log(typeof new String('Pritam').slice(1)); // converted back to string after the operation is done
