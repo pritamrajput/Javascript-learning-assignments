@@ -767,3 +767,18 @@ btn.addEventListener('click',function(){
     console.log(`${output.padEnd(20)}${'✅'.repeat(i + 1)}`);
   }
 })
+
+const flights1 =
+  '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
+
+// 🔴 Delayed Departure from FAO to TXL (11h25)
+//              Arrival from BRU to FAO (11h45)
+//   🔴 Delayed Arrival from HEL to FAO (12h05)
+//            Departure from FAO to LIS (12h30)
+
+const newFlights = flights.split("+");
+for(const x of newFlights){
+   const [first, second, third, fourth ] = x.split(";");
+   console.log(`${first.startsWith('_Delayed')?'🔴':''} ${first.replaceAll("_"," ").trim()} from ${second.slice(0,3).toUpperCase()} to ${third.slice(0,3).toUpperCase()} (${fourth.replace(":","h")})`.padStart(45));
+   
+}
