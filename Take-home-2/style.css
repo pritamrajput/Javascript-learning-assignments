@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    height: 100%;
+}
+body{
+    height: 100%;
+    position: relative;
+    background-color: aquamarine;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    border: 2px solid radial-gradient(ellipse at center, #707869, #236E73);
+    background: radial-gradient(ellipse at center, #707869, #236E73);
+    width: 50%;
+    margin: 0 auto;
+    color: aliceblue;
+    height: 150px;
+    margin-top: 30px;
+}
+.name__div,.color__div{
+    width: 260px;
+    display: flex;
+    justify-content: space-between;
+}
+.add__box{
+    padding: 5px 10px;
+    background-color:transparent;
+    border-radius: 5px;
+    border: 1px solid 	#74ee15;
+    color: aliceblue;
+}
+.add__box:hover{
+    cursor: pointer;
+    box-shadow: 0 0 10px 5px #74ee15;
+}
+
+
+/* ****styling upperbox***** */
+.Upperbox{
+    width: 100%;
+    border: 1px solid transparent;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.colorbox{
+    width: 250px;
+    height: 150px;
+    border: 2px solid #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.cancelbtn{
+    padding: 2px 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #000000;
+    background:#000000;
+    color: aliceblue;
+}
+.colorbutton{
+    border: 1px solid #000000;
+    padding: 2px 2px;
+    background:#000000;
+    color: aliceblue;
+}
