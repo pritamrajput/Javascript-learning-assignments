@@ -85,8 +85,7 @@ const users = [
     {firstName:"akshay",lastName:"saini",age:26},
     {firstName:"donald",lastName:"trump",age:75},
     {firstName:"elon",lastName:"musk",age:50},
-    {firstName:"deepika",lastName:"padukone",age:26
-},
+    {firstName:"deepika",lastName:"padukone",age:26},
 ];
 
 // obtaining array of fullname from the array users
@@ -109,3 +108,20 @@ const output =  users.reduce(function(acc,curr){
   return acc;
 },{})
 console.log(output);
+
+// Find the firstName of all the person whose age is less than 30
+const output1 = users.filter(function(x){
+   return x.age < 30;
+}).map(function(x){
+    return x.firstName;
+})
+console.log(output1);
+
+// Find the firstName of all the person whose age is less than 30 using reduce
+const output2 = users.reduce(function(acc,curr){
+       if(curr.age<30){
+         acc.push(curr.firstName)
+       }
+       return acc;
+},[])
+console.log(output2);
