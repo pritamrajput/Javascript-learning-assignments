@@ -11,7 +11,7 @@ function whileWorking(){
 
     console.log("Work conti...");
 
-    // setTimeout(pizzaArrived,3000);
+    setTimeout(pizzaArrived,3000);
 }
 
 whileWorking();

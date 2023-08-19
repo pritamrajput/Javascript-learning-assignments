@@ -107,7 +107,8 @@ console.log(users[0]?.name ?? 'user array is empty');
 // console.log(restaurantName, hours, tags);
 
 // // Default values
-// const {menu , starterMenu: starters = []} = restaurant;
+// const {menu , starterMenu: starters = []} = restaurant; // Here, menu will be undefined when we console it.
+// const {menu = [] , starterMenu: starters = []} = restaurant;
 // console.log(menu,starters);
 
 // // Mutating variables
